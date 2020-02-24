@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import Counters from "../counters/counters";
 import AddCounterElement from "../add-counter-element/add-counter-element";
 import TotalCount from "../total-count/total-count";
-import './app.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import './app.css';
+
+/*https://github.com/mars/create-react-app-buildpack.git*/
 
 function App() {
 
@@ -54,7 +57,7 @@ function App() {
     };
 
     return (
-        <div id='app-div-style'>
+        <div className='container mt-3'>
             <TotalCount         countersList={countersArr}
                                 onResetTotalCount={onResetTotalCount}/>
 

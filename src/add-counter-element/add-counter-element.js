@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import './add-counter-element.css'
 
 const AddCounterElement = ({onAddFormSubmit}) => {
     const [name, setName] = useState('');
@@ -15,16 +14,21 @@ const AddCounterElement = ({onAddFormSubmit}) => {
         setInitialValue('');
     };
 
-    return(
+    return (
         <div>
-            <span>Add new counter</span>
-            <section>
-                <input type='text' value={name} placeholder='Name'
-                        onChange={(e) => setName(e.target.value)}/>
-                <input id='input-value-style' type='text' value={initialValue} placeholder='Initial Value'
-                        onChange={(e) => setInitialValue(e.target.value)}/>
-                <button onClick={() => onFormSubmit(name, initialValue)}>Add counter</button>
-            </section>
+            <hr/>
+            <span className='text-secondary'>Add new counter</span>
+            <div className='container row w-75'>
+                    <input type='text' value={name} placeholder='Name'
+                           className='input-group w-auto m-1 pl-1'
+                           onChange={(e) => setName(e.target.value)}/>
+                    <input type='text' value={initialValue} placeholder='Initial Value'
+                           className='input-group w-25 m-1 pl-1'
+                           onChange={(e) => setInitialValue(e.target.value)}/>
+                    <button className='btn btn-outline-success btn-sm m-1' onClick={() => onFormSubmit(name, initialValue)}>Add
+                        counter
+                    </button>
+            </div>
         </div>
     );
 }

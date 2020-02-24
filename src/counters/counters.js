@@ -1,6 +1,5 @@
 import React from "react";
 import CountersItem from "../counters-item/counters-item";
-import './counters.css';
 
 const Counters = ({countersList, counterDecrement, counterIncrement, onCounterReset, onCounterDelete}) => {
     const blockOfCounters = countersList.map((el)=> {
@@ -16,8 +15,8 @@ const Counters = ({countersList, counterDecrement, counterIncrement, onCounterRe
         );
     });
     return(
-        <div>
-            <span>Counters</span>
+        <div className='mt-3'>
+            <div className='text-secondary'>Counters</div>
             <ul>
                 {blockOfCounters}
             </ul>

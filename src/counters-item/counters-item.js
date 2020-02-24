@@ -1,16 +1,20 @@
 import React from "react";
-import './counters-item.css'
+import DeleteModalButton from "../delete-modal-button";
 
 const CountersItem = ({counterName, counterValue, counterDecrement,
                           counterIncrement, onCounterReset, onCounterDelete}) => {
     return(
-        <div>
-            <article id='name-style'>{counterName}</article>
-            <button className="small-buttons" onClick={counterDecrement}>-</button>
-            <article>{counterValue}</article>
-            <button className="small-buttons" onClick={counterIncrement}>+</button>
-            <button id='reset-button-style' onClick={onCounterReset}>Reset {counterName}</button>
-            <button id='delete-button' onClick={onCounterDelete}>Delete</button>
+        <div className='card'>
+            <div className='card-body w-50'>
+                <article>{counterName}</article>
+                <button className='btn btn-primary btn-sm' onClick={counterDecrement}>-</button>
+                <span className='badge badge-light'>{counterValue}</span>
+                <button className='btn btn-primary btn-sm' onClick={counterIncrement}>+</button>
+                <button className='btn btn-secondary btn-sm' onClick={onCounterReset}>Reset {counterName}</button>
+                <DeleteModalButton onCounterDelete={onCounterDelete}
+                                   counterName={counterName}/>
+
+            </div>
         </div>
     )
 }
